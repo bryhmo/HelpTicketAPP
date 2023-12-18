@@ -1,0 +1,21 @@
+#### PROJECT IDEA
+user can create new help ticket
+Admin can reply on help ticket
+admin can reject or resolve the ticket
+when admin update on the ticket user will get one notification via email that ticket status is updated
+user can give ticket title and description
+
+
+#### TABLE STRUCTURE 
+Tickets
+    - title(string) {required}
+    - description(text){required}
+    - status(open{default},resolved,rejected),
+    - attachments(string){nullable},
+    - user_id {required} filled by laravel,
+    - status_changed_by_id{nullable}
+    
+Replies
+- body(text){required}
+- user_id {required} filled by laravel,
+- ticket_id {required} filled by laravel,
