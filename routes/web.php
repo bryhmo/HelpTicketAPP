@@ -29,3 +29,9 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+
+//create ticket view route
+Route::get('/ticket/create',function(){
+    return view('ticket.create');
+});
