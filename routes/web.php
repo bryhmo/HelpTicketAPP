@@ -35,5 +35,7 @@ require __DIR__.'/auth.php';
 //create ticket view route
 
 Route::middleware('auth')->group(function(){
-    Route::get('/ticket/create',[TicketController::class,'create']);
+    Route::resource('/ticket',TicketController::class);
+    // Route::get('/ticket/create',[TicketController::class,'create']);
+    // Route::post('/ticket/create',[TicketController::class,'store']);
 });
