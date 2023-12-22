@@ -22,9 +22,7 @@ class TicketController extends Controller
     public function create()
     {
         //
-
-
-        return view('ticket.create');
+    return view('ticket.create');
     }
 
     /**
@@ -32,7 +30,13 @@ class TicketController extends Controller
      */
     public function store(StoreTicketRequest $request)
     {
-        //
+        $ticket =Ticket::create([
+            'title'=>$request->title,
+            'description'=>$request->description,
+            'user_id'=>auth()->id(),
+        ]);
+
+        return response()->json($ticket);
     }
 
     /**
